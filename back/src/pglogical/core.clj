@@ -68,18 +68,6 @@
           (.setFlushedLSN stream lsn))
         (recur)))))
 
-(defn runme []
-  (replication-connection
-   {:uri "jdbc:postgresql://localhost:5777/test"
-    :user "nicola"
-    :slot "myslot"
-    :decoder "wal2json" ;; test_decoding
-    :password "postgres"}
-   println)
-
-  )
-
-(runme)
 
 ;; (db/exec! {:connection replConn} "IDENTIFY_SYSTEM")
 
